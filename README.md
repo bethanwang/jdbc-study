@@ -19,7 +19,7 @@
 
 先show一把，演示一遍窗口程序；让大家知道我们要做的一个C/S项目具体长啥样，有什么功能。
 
-![](/Users/bethanwang/师创——工作/系列教程研发/C:S/pic/演示图.png)
+![](https://github.com/bethanwang/jdbc-study/tree/master/pic/演示图.png)
 
 功能介绍：
 
@@ -43,7 +43,7 @@
 
 ### 1. 产品需求
 
-![](/Users/bethanwang/师创——工作/系列教程研发/C:S/pic/原型图.png)
+![](https://github.com/bethanwang/jdbc-study/tree/master/pic/原型图.png)
 
 使用Axure绘制原型图，形成prd文档。通过prd文档，我们可以看到，需要实现的窗口的大概布局及界面中各个控件功能；含有业务流程的功能通过流程图直观体现具体流程；界面交互和功能实现都附加上了必要的文字说明；该prd文档完全可以作为产品、开发、测试及项目管理人员之间沟通的依据，并能指导开发和测试工作。
 
@@ -53,11 +53,11 @@
 
 1）、在NetBeans中新建一个java项目，在`package`中新建一个`JFrame Form`，命名为`Window`，使用`Design`模式，按照原型图设计，通过从左侧`Palette`拖出对应的Swing控件，绘制出窗口、布局、控件。点击`Design`左侧的`Source`选项卡，可以查看源码。
 
-![](/Users/bethanwang/师创——工作/系列教程研发/C:S/pic/静态窗口.png)
+![](https://github.com/bethanwang/jdbc-study/tree/master/pic/静态窗口.png)
 
 2）、右击“查找”按钮，添加`mouseClicked`事件；“重置”、“保存”、“删除”、“退出”按钮同样添加`mouseCliecked`事件；按同样的方式，给数据表`table`的每一行添加`mouseClicked`事件；添加完事件，点击`Source`可以查看对应生成的源代码，在生成的代码方法中添加对应业务代码。
 
-![](/Users/bethanwang/师创——工作/系列教程研发/C:S/pic/添加事件.png)
+![](https://github.com/bethanwang/jdbc-study/tree/master/pic/添加事件.png)
 
 生成代码：
 
@@ -190,7 +190,7 @@ public static void main(String args[]) {
 
 运行程序效果：
 
-![](/Users/bethanwang/师创——工作/系列教程研发/C:S/pic/静态数据窗口.png)
+![](https://github.com/bethanwang/jdbc-study/tree/master/pic/静态数据窗口.png)
 
 
 
@@ -198,7 +198,7 @@ public static void main(String args[]) {
 
 在`mysql`中新建数据库`cs-demo`，分别设计Student表和Clazz表，创建表时保留主外键关系，不启用外键约束，E-R如下：
 
-![](/Users/bethanwang/师创——工作/系列教程研发/C:S/pic/E-R.png)
+![](https://github.com/bethanwang/jdbc-study/tree/master/pic/E-R.png)
 
 
 
@@ -212,7 +212,7 @@ public static void main(String args[]) {
 
 （这一波操作，是因为笔者不喜欢使用NetBeans开发，习惯了使用idea。囧～～）
 
-<img src="/Users/bethanwang/师创——工作/系列教程研发/C:S/pic/idea新建项目.png" style="zoom:50%;" />
+<img src="https://github.com/bethanwang/jdbc-study/tree/master/pic/idea新建项目.png" style="zoom:50%;" />
 
 2）添加`lombok`依赖。
 
@@ -448,7 +448,7 @@ class DriverInfo {
 
 `mysql-connector-java-8.0.19.jar`中关于SPI的配置：
 
-![](/Users/bethanwang/师创——工作/系列教程研发/C:S/pic/驱动jarSPI配置.png)
+![](https://github.com/bethanwang/jdbc-study/tree/master/pic/驱动jarSPI配置.png)
 
 
 
@@ -531,7 +531,7 @@ class DriverInfo {
 
    此处其实是调用的是`java.sql.Connection`类的子类`com.mysql.cj.jdbc.ConnectionImpl`中的代码，通过下图可以看到它们之间的继承关系。
 
-   ![](/Users/bethanwang/师创——工作/系列教程研发/C:S/pic/Connection继承关系.png)
+   ![](https://github.com/bethanwang/jdbc-study/tree/master/pic/Connection继承关系.png)
 
    源码解析：
 
@@ -886,7 +886,7 @@ public class DBUtil {
 
 重构前代码结构：
 
-![](/Users/bethanwang/师创——工作/系列教程研发/C:S/pic/重构前代码结构.png)
+![](https://github.com/bethanwang/jdbc-study/tree/master/pic/重构前代码结构.png)
 
 ​		现在代码结构比较混乱，全部的类都平铺在同一个包里面，如果项目功能越多，这个包里面的类就越多，最后就没法看啦，所以需要重构代码。
 
@@ -894,7 +894,7 @@ public class DBUtil {
 
 重构后代码结构：
 
-![](/Users/bethanwang/师创——工作/系列教程研发/C:S/pic/重构后代码结构.png)
+![](https://github.com/bethanwang/jdbc-study/tree/master/pic/重构后代码结构.png)
 
 `com.study.cs.demo.service.StudentService`类：
 
@@ -1053,7 +1053,7 @@ public class StudentServiceImpl implements StudentService {
 
  1. 新建`db.properties`文件。
 
-    <img src="/Users/bethanwang/师创——工作/系列教程研发/C:S/pic/新建properties.png" style="zoom:120%;" />
+    <img src="https://github.com/bethanwang/jdbc-study/tree/master/pic/新建properties.png" style="zoom:120%;" />
 
  2. 在`db.properties`文件中，新增配置内容。
 
@@ -1169,7 +1169,7 @@ public class StudentServiceImpl implements StudentService {
 
     本文通过实现“保存”学员功能，编写代码手动实现相关事务处理；“保存”功能的业务逻辑已经在产品需求说明，对应业务流程如下图：
 
-    <img src="/Users/bethanwang/师创——工作/系列教程研发/C:S/pic/保存学员流程图.png" style="zoom:50%;" />
+    <img src="https://github.com/bethanwang/jdbc-study/tree/master/pic/保存学员流程图.png" style="zoom:50%;" />
 
     由业务流程图可以看出，保存班级和保存学员在同一个事务中，因此在提交保存后开启事务，然后经过查询班级、保存班级、查询学员、保存学员一系列业务处理，都成功以后提交事务，如果中间某个环节出了异常，则回滚事务。
 
