@@ -4,8 +4,19 @@
 # Log file
 *.log
 
+# idea file and dir
+*.iml
+*.DS_Store
+.idea/
+
 # BlueJ files
 *.ctxt
+
+# web project dir
+META-INF/
+
+# target dir
+target/
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
