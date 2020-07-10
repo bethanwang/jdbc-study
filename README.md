@@ -461,11 +461,9 @@ class DriverInfo {
 
 所谓`Driver`隐式加载，就是`Class.forName(DRIVER_CLASS);`这一行代码不需要再写了。
 
-```markdown
-	JDBC4.0开始，这个显式的初始化驱动的代码就可以不用写了，很多时候之所以这样写是考虑到线上兼容。
-	在java 6以后，加入了SPI（Service Provider Interface）功能，SPI提供了一种JVM级别的服务发现机制，只需要在jar包中按照SPI的格式要求进行配置，JVM就会在运行时通过懒加载，帮我们找到所需的服务并加载。如果系统中没有使用到这个服务，则不会被加载，避免资源浪费。
-	SPI的配置路径是：/META-INF/services/下面，我们程序中使用的”mysql-connector-java-8.0.19.jar”也添加了对应的配置，所以在我们的项目中，可以隐式加载驱动，即可以不写`Class.forName(DRIVER_CLASS);`这一行代码。
-```
+> JDBC4.0开始，这个显式的初始化驱动的代码就可以不用写了，很多时候之所以这样写是考虑到线上兼容。  
+> 在java 6以后，加入了SPI（Service Provider Interface）功能，SPI提供了一种JVM级别的服务发现机制，只需要在jar包中按照SPI的格式要求进行配置，JVM就会在运行时通过懒加载，帮我们找到所需的服务并加载。如果系统中没有使用到这个服务，则不会被加载，避免资源浪费。  
+> SPI的配置路径是：/META-INF/services/下面，我们程序中使用的”mysql-connector-java-8.0.19.jar”也添加了对应的配置，所以在我们的项目中，可以隐式加载驱动，即可以不写`Class.forName(DRIVER_CLASS);`这一行代码。
 
 `mysql-connector-java-8.0.19.jar`中关于SPI的配置：
 
